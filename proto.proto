@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+
+
+service Greeter {
+
+    rpc Chicken2(Request) returns (stream Chunk) {}
+}
+message Request{
+    string req=1;
+}
+message Chunk {
+    bytes chunk = 1;
+}
