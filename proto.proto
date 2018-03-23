@@ -5,10 +5,18 @@ syntax = "proto3";
 service Greeter {
 
     rpc Chicken2(Request) returns (stream Chunk) {}
+
+    rpc Chicken3(stream Chunk) returns (Reply){}
+
+    rpc Chicken4(stream Chunk) returns (stream Chunk) {}
 }
+
 message Request{
     string req=1;
 }
 message Chunk {
     bytes chunk = 1;
+}
+message Reply {
+    string rep = 1;
 }
